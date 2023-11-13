@@ -12,10 +12,8 @@ jobs:
         with:
           channel: beta
       - run: flutter pub get
+      - run: flutter test
       - run: flutter build web --release
-      - uses: peaceiris/actions-gh-pages@v3
+      - uses: bluefireteam/flutter-gh-pages@v7
         with:
-
-github_token: ${{secrets.GITHUB_TOKEN}}
-
-publish_dir: ./build/web
+          baseHref: /portfolio/
